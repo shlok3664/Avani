@@ -7,26 +7,22 @@ export class GeoCell
     )
     {
         this.id = id;
-
         this.vertices = vertices;
-
         this.level = level;
 
         this.parent = null;
-
         this.children = [];
 
-        // Geographic center of this cell.
         this.center = null;
+
+        // Neighboring cells sharing an edge
+        this.neighbors = [];
     }
 
     addChild(child)
     {
         child.parent = this;
-
-        this.children.push(
-            child
-        );
+        this.children.push(child);
     }
 
     isLeaf()
@@ -37,5 +33,18 @@ export class GeoCell
     setCenter(center)
     {
         this.center = center;
+    }
+
+    addNeighbor(cell)
+    {
+        if (!this.neighbors.includes(cell))
+        {
+            this.neighbors.push(cell);
+        }
+    }
+
+    getNeighbors()
+    {
+        return this.neighbors;
     }
 }

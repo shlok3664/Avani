@@ -531,4 +531,34 @@ export class Icosahedron {
     getLevel() {
         return this.level;
     }
+    buildCellAdjacency() {
+        for (const cell of this.cells) {
+            cell.neighbors = [];
+        }
+
+        for (let i = 0; i < this.cells.length; i++) {
+            for (let j = i + 1; j < this.cells.length; j++) {
+                const a = this.cells[i];
+                const b = this.cells[j];
+
+                let sharedVertices = 0;
+
+                for (const vertexA of a.vertices) {
+                    if (b.vertices.includes(vertexA)) {
+                        sharedVertices++;
+                    }
+                }
+
+                if (sharedVertices === 2) {
+                    a.addNeighbor(b);
+                    b.addNeighbor(a);
+                }
+            }
+        }
+        console.log(
+            "Cell 20 neighbors:",
+            icosahedron.cells[20].getNeighbors()
+        );
+    }
+
 }
