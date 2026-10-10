@@ -10,7 +10,7 @@ SOURCE_PATH = Path(
 )
 
 OUTPUT_PATH = Path(
-    r"C:\Users\Ajivak\Desktop\AI_V1\Avani"
+    r"C:\Users\____user____desktop____folderlocation.....\Desktop\AI_V1\Avani"
     r"\public\data\visualization"
     r"\global_temperature.json"
 )

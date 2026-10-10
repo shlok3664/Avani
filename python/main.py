@@ -110,7 +110,7 @@ def main():
         )
      
         visualization_output_path = Path(
-            r"C:\Users\Ajivak\Desktop\AI_V1\Avani\public\data\visualization\timeline.json"
+            r"C:\Users\_____________output_________path__________for__________timelinedata__________\Desktop\AI_V1\Avani\public\data\visualization\timeline.json"
         )
 
         visualization_output_path.parent.mkdir(
